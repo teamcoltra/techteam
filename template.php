@@ -1,12 +1,12 @@
 <?php
-if ($default_links = NULL) {
-  $default_links = '
-            <li class="active"><a href="#">'Dashboard'</a></li>
-            <li><a href="#">'Active'</a></li>
-            <li><a href="#">'Completed'</a></li>
-            <li><a href="#" data-method="delete" rel="nofollow">'Logout'</a></li>';
+if ($default_links == NULL) {
+  $default_links = "
+            <li class='active'><a href='#'>$lang_dashboard</a></li>
+            <li><a href='#'>$lang_active</a></li>
+            <li><a href='#'>$lang_completed</a></li>
+            <li><a href='logout.php' data-method='delete' rel='nofollow'>$lang_logout</a></li>";
 }
-if ($sitepage = NULL) {
+if ($sitepage == NULL) {
 $sitepage = 'Home';
 }
 $head_template = "
@@ -58,7 +58,7 @@ $foot_template = "
       </div><!--/content-->
 
       <footer>
-      <p>Kopimi</p>
+      <p>$lang_kopimi</p>
       </footer>
 
     </div> <!-- /container -->
@@ -71,3 +71,4 @@ $foot_template = "
   </body>
 </html>
 ";
+?>

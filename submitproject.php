@@ -1,47 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Team - Project List</title>
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]-->
-
-    <link href="assets/css/custom.css" media="all" rel="stylesheet" type="text/css" />
-
-  </head>
-  <body>
-
-    <div class="container">
-  <div class="navbar ">
-    <div class="navbar-inner">
-      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-
-        <a href="http://travismccrea.schedulefu.com/dashboard" class="brand">PPI Tech Team</a>
-
-      <div class="container nav-collapse">
-        <ul class="nav pull-right">
-            <li class="active"><a href="#">Dashboard</a></li>
-            <li><a href="#">Active</a></li>
-            <li><a href="#">Completed</a></li>
-            <li><a href="#" data-method="delete" rel="nofollow">Logout</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </div>
-</div>
-
-    
-
-    <div class="container">
-      <div class="content">
+<?php
+include('config.php');
+include('check.php');
+include('language.php');
+//Before Including Template You Can Define Custom Things:
+$sitepage = 'Submit Project'; //will make the <title> display your current location
+//$default_links = '
+//            <li class="active"><a href="#">Dashboard</a></li>
+//            <li><a href="#">Active</a></li>
+//            <li><a href="#">Completed</a></li>
+//            <li><a href="#" data-method="delete" rel="nofollow">Logout</a></li>';
+//Default Links Changes The Links At Top
+include('template.php');
+echo $head_template;
+?>
         <div class="row">
 
 
@@ -50,8 +21,8 @@
     <h1 class="sign-up">Sign Up</h1>
     <h4 style="font-weight:800">You're just 60 seconds away from from Tech Team goodness.</h4>
 
-    <form accept-charset="UTF-8" action="/users" class="form-horizontal" id="new_user" method="post">
-
+    <form accept-charset="UTF-8" action="submit.php" class="form-horizontal" id="addproject" method="post">
+<input type="hidden" value="addproject" name="return" />
       <div>
         
           <div class="control-group">
@@ -75,16 +46,29 @@
             </div>
           </div>
 
-
         <div class="control-group">
-          <label class="control-label" for="email">Repository Name</label>
+          <label class="control-label" for="language">Programming Language</label>
           <div class="controls">
-            <input id="email" name="projectreponame" placeholder="ppi-wordpress" size="30" type="email" value="" />
+            <input id="language" name="projectlanguage" placeholder="PHP" size="30" type="text" value="" />
           </div>
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="email">Repository Host</label>
+          <label class="control-label" for="reponame">Repository Name</label>
+          <div class="controls">
+            <input id="reponame" name="projectreponame" placeholder="ppi-wordpress" size="30" type="text" value="" />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="projectrepouser">Github/Bitbucket User</label>
+          <div class="controls">
+            <input id="projectrepouser" name="projectrepouser" placeholder="teamcoltra" size="30" type="text" value="" />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="projectrepohost">Repository Host</label>
           <div class="controls">
             <select name="projectrepohost">
               <option value="bitbucket">BitBucket</option>
@@ -120,18 +104,4 @@
 </div>
 
         </div><!--/row-->
-      </div><!--/content-->
-
-      <footer>
-      <p>Kopimi</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/assets/js.js" type="text/javascript"></script>
-
-  </body>
-</html>
+<?php echo $foot_template; ?>

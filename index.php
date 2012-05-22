@@ -1,46 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Team - Project List</title>
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]-->
-
-    <link href="assets/css/custom.css" media="all" rel="stylesheet" type="text/css" />
-
-  </head>
-  <body>
-
-    <div class="container">
-  <div class="navbar ">
-    <div class="navbar-inner">
-      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-
-        <a href="/" class="brand">PPI Tech Team</a>
-
-      <div class="container nav-collapse">
-        <ul class="nav pull-right">
-            <li><a href="#">About</a></li>
-            <li><a href="/login.php">Login</a></li>
-            <li class="active"><a href="/users/sign_up">Sign Up</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </div>
-</div>
-
-    
-
-    <div class="container">
-      <div class="content">
+<?php
+include('config.php');
+include('language.php');
+//Before Including Template You Can Define Custom Things:
+$sitepage = 'Home'; //will make the <title> display your current location
+$default_links = '<li><a href="about.php">About</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li class="active"><a href="signup.php">Sign Up</a></li>';
+//Default Links Changes The Links At Top
+include('template.php');
+echo $head_template;
+?>
         <div class="row">
           <div class="span12">
   <div class="box box-nopad" style="overflow:hidden;">
@@ -131,18 +100,4 @@
 </div>
 
         </div><!--/row-->
-      </div><!--/content-->
-
-       <footer>
-      <p>Kopimi</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/assets/js.js" type="text/javascript"></script>
-
-  </body>
-</html>
+ <?php echo $foot_template; ?>
